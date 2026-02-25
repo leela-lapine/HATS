@@ -189,6 +189,7 @@ body {
       align-items: center;
       padding: 10px;
       height: auto;
+      min-height: 100vh;
       overflow-x: hidden;
   }
 
@@ -212,13 +213,22 @@ body {
   }
 
   .page-title {
-      font-size: 2.75rem;
+      font-size: 4.5rem;
       padding: 8px 0 10px 0;
       letter-spacing: 0.19em;
   }
 
   .cell {
       font-size: 0.5rem;
+  }
+
+  .villager-name {
+      font-size: 0.6rem;
+  }
+
+  .villager-image {
+      transform: scale(1.2);
+      margin-top: 15px;
   }
 
   /* buttons sit in a row below the board on mobile */
