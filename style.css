@@ -186,47 +186,65 @@ body {
   body {
       flex-direction: column;
       justify-content: flex-start;
+      align-items: center;
       padding: 10px;
       height: auto;
+      overflow-x: hidden;
+  }
+
+  .layout-row {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .board-container-wrapper {
+      width: 95vw;
+      box-sizing: border-box;
+      padding: 15px;
   }
 
   .board-container {
-      width: 90vw;
-      height: 90vw;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
       gap: 5px;
+  }
+
+  .page-title {
+      font-size: 2.75rem;
+      padding: 8px 0 10px 0;
+      letter-spacing: 0.19em;
   }
 
   .cell {
       font-size: 0.5rem;
   }
 
+  /* buttons sit in a row below the board on mobile */
   .icon-container {
-      margin: 0 auto;
-      margin-top: 10px;
-      margin-bottom: 30px;
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
       flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 15px;
+      gap: 20px;
+  }
+
+  .top-buttons {
+      flex-direction: row;
+      padding-top: 0;
+      gap: 20px;
   }
 
   .refresh-icon, .clear-icon {
       width: 75px;
+      margin-bottom: 0;
   }
 
-  .page-title {
-      font-size: 2.75rem;
-      padding: 8px 0 10px 0;
-  }
-
-  .below-board-image {
-    bottom: -215px;
-      max-width: 150px;
-      max-height: 120px;
-  }
-
-  .attribution {
-      font-size: 0.9rem;
-      bottom: -250px;
+  /* hide credit on mobile to keep it clean */
+  .credit-container {
+      display: none;
   }
 }
