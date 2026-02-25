@@ -1,0 +1,232 @@
+@font-face {
+  font-family: 'CooperBits';
+  src: url('CooperBits 2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.center-container {
+  position: relative; 
+  text-align: center; 
+}
+
+.page-title {
+    font-family: 'CooperBits', Arial, sans-serif;
+    font-size: 9rem;
+    letter-spacing: 0.19em;
+    color: #00288D;
+    margin: 0;
+    padding: 0px 0px 0px 10px;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-right: -0.2em;
+}
+
+
+body {
+  font-family: "CooperBits", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('HatsBingoBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.layout-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* both children share the same height */
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  width: fit-content;
+}
+
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  width: fit-content;
+}
+
+.refresh-icon, .clear-icon {
+  width: 175px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+
+
+.board-container-wrapper {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+}
+
+/* new board container to become mobile friendly */
+.board-container {
+  width: 550px;
+  height: 550px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .board-container {
+      width: 90vw;
+      height: 90vw;
+  }
+}
+/* end new board container*/
+
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 0px;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #00288D;
+}
+
+.cell {
+  background-color: #ABCCD9;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+.villager-name {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 5px;
+  color: #00288D;
+}
+
+/* new villager image and star frag overlay for mobile friendly update */
+.villager-image {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+  margin-bottom: .5px;
+  margin-top: 25px;
+  transform: scale(1.75);
+}
+
+@media (max-width: 600px) {
+  .villager-image {
+      max-width: 90%;
+      max-height: 70%;
+  }
+}
+
+.star-fragment-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .star-fragment-overlay {
+      max-width: 90%;
+      max-height: 90%;
+  }
+}
+/* end new villager image and star frag */
+
+.villager-name {
+    font-family: 'CooperBits', Arial, sans-serif;
+    color: #00288D;
+}
+
+.credit-icon {
+  width: 175px;
+  margin-bottom: 20px;
+}
+
+.credit-container {
+  margin-top: auto;
+}
+
+/* new additions to become mobile friendly */
+@media (max-width: 600px) {
+  body {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+      height: auto;
+  }
+
+  .board-container {
+      width: 90vw;
+      height: 90vw;
+      gap: 5px;
+  }
+
+  .cell {
+      font-size: 0.5rem;
+  }
+
+  .icon-container {
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+  }
+
+  .refresh-icon, .clear-icon {
+      width: 75px;
+  }
+
+  .page-title {
+      font-size: 2.75rem;
+      padding: 8px 0 10px 0;
+  }
+
+  .below-board-image {
+    bottom: -215px;
+      max-width: 150px;
+      max-height: 120px;
+  }
+
+  .attribution {
+      font-size: 0.9rem;
+      bottom: -250px;
+  }
+}
