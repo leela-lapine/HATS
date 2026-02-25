@@ -5,27 +5,6 @@
   font-style: normal;
 }
 
-.center-container {
-  position: relative; 
-  text-align: center; 
-}
-
-.page-title {
-    font-family: 'CooperBits', Arial, sans-serif;
-    font-size: 9rem;
-    letter-spacing: 0.19em;
-    color: #00288D;
-    margin: 0;
-    padding: 0px 0px 0px 10px;
-    white-space: nowrap;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin-right: -0.2em;
-}
-
-
 body {
   font-family: "CooperBits", Arial, sans-serif;
   margin: 0;
@@ -43,33 +22,9 @@ body {
 .layout-row {
   display: flex;
   flex-direction: row;
-  align-items: stretch; /* both children share the same height */
+  align-items: stretch;
+  height: 754px;
 }
-
-.top-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  width: fit-content;
-}
-
-
-.icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 15px;
-  width: fit-content;
-}
-
-.refresh-icon, .clear-icon {
-  width: 175px;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
-
 
 .board-container-wrapper {
   background-color: #ffffff;
@@ -79,7 +34,21 @@ body {
   width: fit-content;
 }
 
-/* new board container to become mobile friendly */
+.page-title {
+  font-family: 'CooperBits', Arial, sans-serif;
+  font-size: 9rem;
+  letter-spacing: 0.19em;
+  color: #00288D;
+  margin: 0;
+  padding: 0px 0px 0px 10px;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-right: -0.2em;
+}
+
 .board-container {
   width: 550px;
   height: 550px;
@@ -87,24 +56,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 10px;
-}
-
-@media (max-width: 600px) {
-  .board-container {
-      width: 90vw;
-      height: 90vw;
-  }
-}
-/* end new board container*/
-
-
-.header {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 0px;
-  font-size: 5rem;
-  font-weight: bold;
-  color: #00288D;
 }
 
 .cell {
@@ -123,16 +74,6 @@ body {
   box-sizing: border-box;
 }
 
-
-.villager-name {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: 5px;
-  color: #00288D;
-}
-
-/* new villager image and star frag overlay for mobile friendly update */
 .villager-image {
   max-width: 100%;
   max-height: 90%;
@@ -142,11 +83,13 @@ body {
   transform: scale(1.75);
 }
 
-@media (max-width: 600px) {
-  .villager-image {
-      max-width: 90%;
-      max-height: 70%;
-  }
+.villager-name {
+  font-family: 'CooperBits', Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 5px;
+  color: #00288D;
 }
 
 .star-fragment-overlay {
@@ -155,21 +98,50 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   pointer-events: none;
 }
 
-@media (max-width: 600px) {
-  .star-fragment-overlay {
-      max-width: 90%;
-      max-height: 90%;
-  }
+/* ── Right-side icon column ── */
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  width: 175px;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 30px;
 }
-/* end new villager image and star frag */
 
-.villager-name {
-    font-family: 'CooperBits', Arial, sans-serif;
-    color: #00288D;
+.top-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructions {
+  font-family: 'CooperBits', Arial, sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  white-space: normal;
+  width: 175px;
+  margin: 20px 0 0px 0;
+}
+
+.mobile-instructions {
+  display: none;
+}
+
+.refresh-icon, .clear-icon {
+  width: 175px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.credit-container {
+  margin-top: auto;
 }
 
 .credit-icon {
@@ -177,84 +149,91 @@ body {
   margin-bottom: 20px;
 }
 
-.credit-container {
-  margin-top: auto;
-}
-
-/* new additions to become mobile friendly */
+/* ── Mobile ── */
 @media (max-width: 600px) {
   body {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 10px;
-      height: auto;
-      min-height: 100vh;
-      overflow-x: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   .layout-row {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .board-container-wrapper {
-      width: 95vw;
-      box-sizing: border-box;
-      padding: 15px;
+    width: 95vw;
+    box-sizing: border-box;
+    padding: 15px;
   }
 
   .board-container {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      gap: 5px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    gap: 5px;
   }
 
   .page-title {
-      font-size: 4.5rem;
-      padding: 8px 0 10px 0;
-      letter-spacing: 0.19em;
-  }
-
-  .cell {
-      font-size: 0.5rem;
-  }
-
-  .villager-name {
-      font-size: 0.6rem;
+    font-size: 4.5rem;
+    padding: 8px 0 10px 0;
+    letter-spacing: 0.19em;
   }
 
   .villager-image {
-      transform: scale(1.2);
-      margin-top: 15px;
+    transform: scale(1.2);
+    margin-top: 15px;
   }
 
-  /* buttons sit in a row below the board on mobile */
+  .villager-name {
+    font-size: 0.6rem;
+  }
+
   .icon-container {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-left: 0;
-      margin-top: 15px;
-      gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    padding-top: 0;
+    height: auto;
+    gap: 20px;
   }
 
   .top-buttons {
-      flex-direction: row;
-      padding-top: 0;
-      gap: 20px;
+    flex-direction: row;
+    padding-top: 0;
+    gap: 20px;
   }
 
   .refresh-icon, .clear-icon {
-      width: 75px;
-      margin-bottom: 0;
+    width: 75px;
+    margin-bottom: 0;
   }
 
-  /* hide credit on mobile to keep it clean */
   .credit-container {
-      display: none;
+    display: none;
+  }
+
+  .instructions {
+    display: none;
+  }
+
+  .mobile-instructions {
+    display: block;
+    font-family: 'CooperBits', Arial, sans-serif;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    width: auto;
   }
 }
